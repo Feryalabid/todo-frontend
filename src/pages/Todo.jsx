@@ -1,17 +1,19 @@
 // frontend/pages/Todo.jsx
 
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 function Todo() {
   const [todos, setTodos] = useState([]);
-  const [task, setTask] = useState('');
+  const [task, setTask] = useState("");
   const [editId, setEditId] = useState(null);
-  const [editTask, setEditTask] = useState('');
+  const [editTask, setEditTask] = useState("");
 
   // Fetch todos
   const fetchTodos = async () => {
-    const res = await axios.get('http://localhost:5000/api/todos');
+    const res = await axios.get(
+      "https://todo-backend-production-b8d4.up.railway.app/api/todos"
+    );
     setTodos(res.data);
   };
 
@@ -22,20 +24,27 @@ function Todo() {
   // Add todo
   const handleAdd = async () => {
     if (!task) return;
-    await axios.post('http://localhost:5000/api/todos', { task });
-    setTask('');
+    await axios.post(
+      "https://todo-backend-production-b8d4.up.railway.app/api/todos",
+      { task }
+    );
+    setTask("");
     fetchTodos();
   };
 
   // Toggle completed
   const handleToggle = async (id) => {
-    await axios.put(`http://localhost:5000/api/todos/toggle/${id}`);
+    await axios.put(
+      `https://todo-backend-production-b8d4.up.railway.app/api/todos/toggle/${id}`
+    );
     fetchTodos();
   };
 
   // Delete todo
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:5000/api/todos/${id}`);
+    await axios.delete(
+      `https://todo-backend-production-b8d4.up.railway.app/api/todos/${id}`
+    );
     fetchTodos();
   };
 
@@ -47,16 +56,19 @@ function Todo() {
 
   // Submit edit
   const handleEdit = async () => {
-    await axios.put(`http://localhost:5000/api/todos/edit/${editId}`, {
-      task: editTask,
-    });
+    await axios.put(
+      `https://todo-backend-production-b8d4.up.railway.app/api/todos/edit/${editId}`,
+      {
+        task: editTask,
+      }
+    );
     setEditId(null);
-    setEditTask('');
+    setEditTask("");
     fetchTodos();
   };
 
   return (
-<div className="max-w-xl mx-auto p-4 bg-gradient-to-br from-[#243546] via-[#051e49] to-[#0e3e75] rounded shadow mt-35">
+    <div className="max-w-xl mx-auto p-4 bg-gradient-to-br from-[#243546] via-[#051e49] to-[#0e3e75] rounded shadow mt-35">
       <h2 className="text-2xl font-bold mb-4 text-center">Todo App</h2>
       <div className="flex gap-2 mb-4">
         <input
@@ -99,7 +111,7 @@ function Todo() {
               <>
                 <span
                   className={`flex-1 ${
-                    todo.completed ? 'line-through text-gray-400' : ''
+                    todo.completed ? "line-through text-gray-400" : ""
                   }`}
                 >
                   {todo.task}
