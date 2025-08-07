@@ -39,13 +39,13 @@ function App() {
         <header className="flex items-center justify-between px-6 py-4 bg-[#112b3c] shadow-lg">
           <div className="flex items-center gap-2 text-cyan-300 text-2xl font-bold">
             <FaBook />
-            <span>Todo List App</span>
+            <span>ToDo List App</span>
           </div>
           <nav className="flex gap-6 items-center text-lg">
             {user ? (
               <>
                 <Link to="/" className="hover:text-cyan-400 transition">Home</Link>
-                <Link to="/todo" className="hover:text-cyan-400 transition">Todo</Link>
+                <Link to="/todo" className="hover:text-cyan-400 transition">ToDo</Link>
                 <button
                   onClick={handleLogout}
                   className="flex items-center gap-1 bg-cyan-600 px-3 py-1.5 rounded hover:bg-cyan-700 transition text-white"

@@ -69,7 +69,7 @@ function Todo() {
 
   return (
     <div className="max-w-xl mx-auto p-4 bg-gradient-to-br from-[#243546] via-[#051e49] to-[#0e3e75] rounded shadow mt-35">
-      <h2 className="text-2xl font-bold mb-4 text-center">Todo App</h2>
+      <h2 className="text-2xl font-bold mb-4 text-center italic">ToDo App</h2>
       <div className="flex gap-2 mb-4">
         <input
           type="text"

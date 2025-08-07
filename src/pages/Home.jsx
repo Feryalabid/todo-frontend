@@ -13,7 +13,7 @@ function Home() {
 
       <div className="relative z-10 bg-opacity-50 p-10 rounded-lg text-center shadow-xl">
         <h1 className="text-4xl font-extrabold mb-4 tracking-wide drop-shadow-bg-[#112d3a]">
-          Welcome to Your Todo Dashboard
+          Welcome to Your ToDo Dashboard
         </h1>
         <p className="mb-6 text-lg font-medium tracking-wide">
           You are successfully logged in. Start managing your tasks now!
